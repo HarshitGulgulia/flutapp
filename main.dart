@@ -17,16 +17,7 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green[700],
       ),
       body: Center(
-        child: Text(
-          'Hello Guys',
-          style: TextStyle(
-            fontSize: 40.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.blue[400],
-            fontFamily: 'IndieFlower',
-          ),
-        ),
+        child: Image.network('https://picsum.photos/seed/picsum/200/300'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () { },
