@@ -16,12 +16,11 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.green[700],
       ),
-      body: Center(
-        child: Icon(
-          Icons.airport_shuttle,
-          color: Colors.greenAccent,
-          size: 50.0,
-        ),
+      body: Container(
+        padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0,40.0),
+        margin: EdgeInsets.all(30.0),
+        color: Colors.teal,
+        child: Text('hello'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () { },
