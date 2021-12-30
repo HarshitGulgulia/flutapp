@@ -17,7 +17,11 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green[700],
       ),
       body: Center(
-        child: Image.network('https://picsum.photos/seed/picsum/200/300'),
+        child: Icon(
+          Icons.airport_shuttle,
+          color: Colors.greenAccent,
+          size: 50.0,
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () { },
