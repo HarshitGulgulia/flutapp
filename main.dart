@@ -1,65 +1,91 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main()
-{
+void main() {
   runApp(MaterialApp(
-      home: Home(),
+    home: GNCCard(),
   ));
 }
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class GNCCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightBlue[700],
       appBar: AppBar(
-        title: Text('My Product'),
+        title: Text('Gulgulia n Co.'),
         centerTitle: true,
-        backgroundColor: Colors.green[700],
+        backgroundColor: Colors.lightBlue[500],
+        elevation:  0.0,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: <Widget>[
-          Expanded(
-              child: Image.asset('assets/gm.jpg'),
-            flex:3,
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.tealAccent,
-              padding: EdgeInsets.all(30),
-              child: Text('go'),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30,40,30,0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/h.jpg'),
+                radius: 80,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.lightGreenAccent,
-              padding: EdgeInsets.all(30),
-              child: Text('goa'),
+            Divider(
+              height: 60,
+              color: Colors.lightBlue[500],
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.pinkAccent,
-              padding: EdgeInsets.all(30),
-              child: Text('gone'),
+            Text(
+              'Name',
+              style: TextStyle(
+                color: Colors.green,
+                letterSpacing: 2,
+              ),
             ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () { },
-        child: Text(
-          '+',
-          style: TextStyle(
-            fontSize: 40.0,
-          ),
+            SizedBox(height: 10),
+            Text(
+              'HG',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30),
+            Text(
+              'DOB',
+              style: TextStyle(
+                color: Colors.green,
+                letterSpacing: 2,
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              '26-05-2001',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30),
+            Row(
+              children: [
+                Icon(
+                  Icons.email,
+                  color: Colors.grey,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  'harshitgulgulia@gmail.com',
+                  style: TextStyle(
+                    color: Colors.grey[800],
+                    fontSize: 18,
+                    letterSpacing: 1,
+                  )
+                ),
+              ],
+            )
+          ],
         ),
-        backgroundColor: Colors.green[700],
       ),
     );
   }
