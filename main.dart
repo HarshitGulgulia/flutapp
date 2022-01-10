@@ -5,7 +5,15 @@ void main() {
     home: GNCCard(),
   ));
 }
-class GNCCard extends StatelessWidget {
+class GNCCard extends StatefulWidget {
+  @override
+  State<GNCCard> createState() => _GNCCardState();
+}
+
+class _GNCCardState extends State<GNCCard> {
+
+  int age = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +23,15 @@ class GNCCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.lightBlue[500],
         elevation:  0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            age++;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.green[600],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30,40,30,0),
@@ -50,7 +67,7 @@ class GNCCard extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Text(
-              'DOB',
+              'Age',
               style: TextStyle(
                 color: Colors.green,
                 letterSpacing: 2,
@@ -58,7 +75,7 @@ class GNCCard extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              '26-05-2001',
+              '$age',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2,
@@ -90,3 +107,4 @@ class GNCCard extends StatelessWidget {
     );
   }
 }
+
