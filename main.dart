@@ -32,7 +32,14 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         children: names.map((name) {
-          return NameCard(name: name);
+          return NameCard(
+              name: name,
+            delete: () {
+                setState(() {
+                  names.remove(name);
+                });
+            }
+          );
         }).toList(),
       ),
     );

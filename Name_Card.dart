@@ -4,7 +4,8 @@ import 'name.dart';
 class NameCard extends StatelessWidget {
 
   final Name name;
-  NameCard({ required this.name });
+  final VoidCallback delete;
+  NameCard({ required this.name, required this.delete });
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,12 @@ class NameCard extends StatelessWidget {
                   color: Colors.green[400],
                 ),
               ),
+              SizedBox(height: 8),
+              TextButton.icon(
+                onPressed: delete,
+                label: Text('Delete Name'),
+                icon: Icon(Icons.delete),
+              )
             ],
           ),
         )
