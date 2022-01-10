@@ -20,6 +20,36 @@ class _QuoteListState extends State<QuoteList> {
     Name(author: 'HG', text: 'Harshit Gulgulia'),
     Name(author: 'HG', text: 'Harshit Gulgulia'),
   ];
+  Widget nameTemplate(name){
+    return Card(
+      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              name.text,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.deepOrange[800],
+              ),
+            ),
+            SizedBox(height: 6),
+            Text(
+              name.author,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.values[7],
+                color: Colors.deepOrange[400],
+              ),
+            ),
+          ],
+        ),
+      )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +61,7 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
         children: names.map((name) {
-          return Text('${name.text} - ${name.author}');
+          return nameTemplate(name);
         }).toList(),
       ),
     );
