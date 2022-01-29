@@ -9,30 +9,6 @@ class SelectLocation extends StatefulWidget {
 
 class _SelectLocationState extends State<SelectLocation> {
 
-  int counter = 0;
-
-  void getData() async {
-
-    // simulate network request for a username
-    String username=await Future.delayed(Duration(seconds: 3), () {
-      return 'HG';
-    });
-
-    //simulate network request to get ingo of user
-    String info=await Future.delayed(Duration(seconds: 2), () {
-      return 'Male and Age 20';
-    });
-
-    print('$username - $info');
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getData();
-    print('Hello');
-  }
-
   @override
   Widget build(BuildContext context) {
     print('build function ran');
@@ -44,14 +20,6 @@ class _SelectLocationState extends State<SelectLocation> {
         centerTitle: true,
         elevation: 0,
       ),
-      body: ElevatedButton(
-          onPressed: (){
-            setState(() {
-              counter += 1;
-            });
-      },
-      child: Text('Counter is $counter'),
-      )
     );
   }
 }
